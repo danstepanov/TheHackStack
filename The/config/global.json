@@ -1,0 +1,14 @@
+{
+  "global": {
+    "parseVersion": "1.4.2"
+  },
+  "applications": {
+    "The Hack Stack": {
+      "applicationId": "9oSP3PB2jbHOtMg3p0PilW9tQ6ahbfUvlEc9DmYQ",
+      "masterKey": "Rmbvi65WrVrIhH34SmZJrNT4ttLTC6MjlIC54Kdm"
+    },
+    "_default": {
+      "link": "The Hack Stack"
+    }
+  }
+}
