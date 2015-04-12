@@ -1,21 +1,24 @@
 
 <html>
   <head>
-    <title>My ParseApp site</title>
-    <style>
-    body { font-family: Helvetica, Arial, sans-serif; }
-    div { width: 800px; height: 400px; margin: 40px auto; padding: 20px; border: 2px solid #5298fc; }
-    h1 { font-size: 30px; margin: 0; }
-    p { margin: 40px 0; }
-    em { font-family: monospace; }
-    a { color: #5298fc; text-decoration: none; }
-    </style>
+    <script src = "https://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel = "stylesheet">
+    <script src="main.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   </head>
   <body>
-    <div>
-      <h1>Congratulations! You're already hosting with Parse.</h1>
-      <p>To get started, edit this file at <em>public/index.html</em> and start adding static content.</p>
-      <p>If you want something a bit more dynamic, delete this file and check out <a href="https://parse.com/docs/hosting_guide#webapp">our hosting docs</a>.</p>
-    </div>
+    <div class = "page-header">
+      <h1> The Hack Stack </h1>
+    </div>    
+    <!--<form style = "margin-top:30px;">-->
+      <h3>Stack your hack</h3>
+      <div class = "form-group">
+        <input type="text" name="title" placeholder="Title" required></input>
+        <br>
+        <input type="text" name="link" placeholder="Link"></input>
+        <br> 
+      </div>
+      <button onclick="submitFunction()">Post</button>
+    <!--</form>-->
   </body>
 </html>
