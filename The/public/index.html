@@ -2,6 +2,10 @@
   <head>
     <script src = "https://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel = "stylesheet">
+    <link href="bootstrap-3.3.4/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">  
+    <script src="bootstrap-3.3.4/js/bootstrap.js"></script>
+    <link href="style.css">
     <script src="main.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   </head>
@@ -26,10 +30,22 @@
     <div class="list-group">
       <a class="list-group-item" href="http://challengepost.com/software/3d-chocolate-printer-and-a-penguin">
         <!-- TODO: Insert circular image here -->
-        <span class="badge">5</span>
+        <!-- TODO: Insert upvotes here -->
         <h4 class="list-group-item-heading">3D chocolate printer and a penguin</h4>
         <p class="list-group-item-text">printing historical chocolatey goodness in 3D!!!!</p>
-              </a>
+      </a>
+      <a class="list-group-item" href="http://challengepost.com/software/3d-chocolate-printer-and-a-penguin">
+        <!-- TODO: Insert circular image here -->
+        <!-- TODO: Insert upvotes here -->
+        <h4 class="list-group-item-heading">Be the DJ</h4>
+        <p class="list-group-item-text">Amazing music for all to listen</p>
+      </a>
+      <a class="list-group-item" href="http://challengepost.com/software/beat-em-bots">
+        <!-- TODO: Insert circular image here -->
+        <!-- TODO: Insert upvotes here -->
+        <h4 class="list-group-item-heading">Beat'em Bots</h4>
+        <p class="list-group-item-text">Full body controlled Rock'em Sock'em robots</p>
+      </a>
     </div>
     <!-- end of The Hack Stack -->
 
@@ -39,10 +55,12 @@
       <div class = "form-group">
         <input type="text" name="title" placeholder="Title" required></input>
         <br>
-        <input type="text" name="link" placeholder="Link"></input>
+        <input type="text" name="description" placeholder="One Sentence Description" required></input>
+        <br>
+        <input type="text" name="Challenge Post link" placeholder="Link" required></input>
         <br> 
       </div>
-      <button onclick="submitFunction()">Post</button>
+      <button onclick="submitHack()">Post</button>
     </div>
   </body>
 </html>
