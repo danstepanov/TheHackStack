@@ -1,4 +1,4 @@
-funciton getHacks() {
+function getHacks() {
     console.log("getHacks executed");
     console.log("getHacks completed");
 };
