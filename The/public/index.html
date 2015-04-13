@@ -1,4 +1,3 @@
-
 <html>
   <head>
     <script src = "https://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
@@ -7,10 +6,35 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   </head>
   <body>
-    <div class = "page-header">
-      <h1> The Hack Stack </h1>
-    </div>    
-    <!--<form style = "margin-top:30px;">-->
+    <!-- begin navigation bar -->
+    <div class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">The Hack Stack</a>
+        </div>
+      </div>
+    </div> 
+    <!-- end of navigation bar -->
+
+    <!-- begin The Hack Stack -->
+    <div class="list-group">
+      <a class="list-group-item" href="http://challengepost.com/software/3d-chocolate-printer-and-a-penguin">
+        <!-- TODO: Insert circular image here -->
+        <span class="badge">5</span>
+        <h4 class="list-group-item-heading">3D chocolate printer and a penguin</h4>
+        <p class="list-group-item-text">printing historical chocolatey goodness in 3D!!!!</p>
+              </a>
+    </div>
+    <!-- end of The Hack Stack -->
+
+    <!-- begin Submission Form -->
+    <div id="submissionForm" style="margin-top:30px;">
       <h3>Stack your hack</h3>
       <div class = "form-group">
         <input type="text" name="title" placeholder="Title" required></input>
@@ -19,6 +43,6 @@
         <br> 
       </div>
       <button onclick="submitFunction()">Post</button>
-    <!--</form>-->
+    </div>
   </body>
 </html>
