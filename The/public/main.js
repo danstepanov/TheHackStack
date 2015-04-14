@@ -15,7 +15,7 @@ function submitHack() {
 	post.save({
 		title: title,
         description: description,
-		link: function(link){
+		link: (function(){
         console.log("Checking link");
         if (link.indexOf('https://') === 0 || link.indexOf('http://') === 0) {
             return link;
@@ -23,13 +23,12 @@ function submitHack() {
             return 'http://'+link;
     }
     console.log("Link properly set");
-        },
+        })(),
 		upvote: 0,
 	}).then(function(object) {
 		console.log("great success!");
 		$("input[name='title']").val('');
         $("input[name='description']").val('');
-        
 		$("input[name='link']").val('');
 	});
 	console.log("submitHack completed");
