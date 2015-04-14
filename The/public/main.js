@@ -15,7 +15,15 @@ function submitHack() {
 	post.save({
 		title: title,
         description: description,
-		link: checkLink(link){},
+		link: function(link){
+        console.log("Checking link");
+        if (link.indexOf('https://') === 0 || link.indexOf('http://') === 0) {
+            return link;
+        } else {
+            return 'http://'+link;
+    }
+    console.log("Link properly set");
+        },
 		upvote: 0,
 	}).then(function(object) {
 		console.log("great success!");
@@ -26,14 +34,4 @@ function submitHack() {
 	});
 	console.log("submitHack completed");
     
-};
-
-function checkLink() {
-    console.log("Checking link");
-    if (link.indexOf('https://') === 0 || link.indexOf('http://') ==== 0) {
-        return link;
-    } else {
-        return 'http://'+link;
-    }
-    console.log("Link properly set");
 };
