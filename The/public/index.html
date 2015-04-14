@@ -1,10 +1,12 @@
-<html>
+<html lang="en">
   <head>
     <script src = "https://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" rel = "stylesheet">
     <script src="main.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
@@ -14,38 +16,71 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="index.html">The Hack Stack</a>
         </div>
-        <div class="collapse navbar-collapse">
+        <!--<div class="collapse navbar-collapse">-->
           <ul class="nav navbar-nav navbar-right">
             <li>
               <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#StackAHackModal">Stack A Hack</button>
             </li>
           </ul>
-        </div>
+        <!--</div>-->
       </div>
     </div> 
     <!-- end of navigation bar -->
 
     <!-- begin The Hack Stack -->
-    <div class="list-group">
-      <a class="list-group-item" href="http://challengepost.com/software/3d-chocolate-printer-and-a-penguin">
+    <div class="list-group" style="height:100%; width: 80%; margin: 0 auto;">
+      
+      <a class="list-group-item" style="height: 90px; padding-top" href="http://challengepost.com/software/3d-chocolate-printer-and-a-penguin">
         <!-- TODO: Insert circular image here -->
-        <!-- TODO: Insert upvotes here -->
-        <h4 class="list-group-item-heading">3D chocolate printer and a penguin</h4>
-        <p class="list-group-item-text">printing historical chocolatey goodness in 3D!!!!</p>
+        <div style="display:block; float:left;   margin: 0 auto;
+  height: 100%;
+  margin-top: 1%;">
+          <button style="
+    margin:10px; margin-right:20px; height: 50%">
+            <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+            <p id="count">0</p>
+          </button>
+        </div>
+        <div style="display:inline;">
+          <h4 class="list-group-item-heading; ">3D chocolate printer and a penguin</h4>
+          <p class="list-group-item-text">printing historical chocolatey goodness in 3D!!!!</p>
+        </div>
+      </a>  
+        
+      <a class="list-group-item" style="height: 90px; padding-top" href="http://challengepost.com/software/3d-chocolate-printer-and-a-penguin">
+        <!-- TODO: Insert circular image here -->
+        <div style="display:block; float:left;   margin: 0 auto;
+  height: 100%;
+  margin-top: 1%;">
+          <button style="
+    margin:10px; margin-right:20px; height: 50%">
+            <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+            <p id="count">0</p>
+          </button>
+        </div>
+        <div style="display:inline;">
+          <h4 class="list-group-item-heading">Be the DJ</h4>
+          <p class="list-group-item-text">Amazing music for all to listen</p>
+        </div>
       </a>
-      <a class="list-group-item" href="http://challengepost.com/software/3d-chocolate-printer-and-a-penguin">
+        
+      <a class="list-group-item" style="height: 90px; padding-top" href="http://challengepost.com/software/beat-em-bots">
         <!-- TODO: Insert circular image here -->
-        <!-- TODO: Insert upvotes here -->
-        <h4 class="list-group-item-heading">Be the DJ</h4>
-        <p class="list-group-item-text">Amazing music for all to listen</p>
-      </a>
-      <a class="list-group-item" href="http://challengepost.com/software/beat-em-bots">
-        <!-- TODO: Insert circular image here -->
-        <!-- TODO: Insert upvotes here -->
-        <h4 class="list-group-item-heading">Beat'em Bots</h4>
+        <div style="display:block; float:left;   margin: 0 auto;
+  height: 100%;
+  margin-top: 1%;">
+          <button style="
+    margin:10px; margin-right:20px; height: 50%">
+            <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+            <p id="count">0</p>
+          </button>
+        </div>
+        <div style="display:inline;">
+          <h4 class="list-group-item-heading">Beat'em Bots</h4>
         <p class="list-group-item-text">Full body controlled Rock'em Sock'em robots</p>
-      </a>
-    </div>
+       </div>
+    </a>
+   
     <!-- end of The Hack Stack -->
 
     <!-- begin Stack A Hack Modal -->
