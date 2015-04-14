@@ -11,17 +11,29 @@ function submitHack() {
 	var title = $("input[name='title']").val();
     var description = $("input[name='description']").val();
 	var link = $("input[name='link']").val();
+    
 	post.save({
 		title: title,
         description: description,
-		link: link,
+		link: checkLink(link){},
 		upvote: 0,
 	}).then(function(object) {
 		console.log("great success!");
 		$("input[name='title']").val('');
         $("input[name='description']").val('');
+        
 		$("input[name='link']").val('');
 	});
 	console.log("submitHack completed");
     
+};
+
+function checkLink() {
+    console.log("Checking link");
+    if (link.indexOf('https://') === 0 || link.indexOf('http://') ==== 0) {
+        return link;
+    } else {
+        return 'http://'+link;
+    }
+    console.log("Link properly set");
 };

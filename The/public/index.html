@@ -2,22 +2,25 @@
   <head>
     <script src = "https://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel = "stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" rel = "stylesheet">
     <link href="style.css" rel="stylesheet">
     <script src="main.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   </head>
   <body>
     <!-- begin navigation bar -->
     <div class="navbar navbar-default" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
           <a class="navbar-brand" href="index.html">The Hack Stack</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#StackAHackModal">Stack A Hack</button>
+            </li>
+          </ul>
         </div>
       </div>
     </div> 
@@ -46,18 +49,31 @@
     </div>
     <!-- end of The Hack Stack -->
 
-    <!-- begin Submission Form -->
-    <div id="submissionForm" style="margin-top:30px;">
-      <h3>Stack your hack</h3>
-      <div class = "form-group">
-        <input type="text" name="title" placeholder="Title" required></input>
-        <br>
-        <input type="text" name="description" placeholder="One Sentence Description" required></input>
-        <br>
-        <input type="text" name="link" placeholder="Challenge Post Link" required></input>
-        <br> 
+    <!-- begin Stack A Hack Modal -->
+    <div class="modal fade" id="StackAHackModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>                   </button>
+            <center><h4>Stack Your Hack</h4></center>
+          </div>
+          <div class="modal-body">
+            <center><div class = "input-group">
+              <input type="text" class="form-control" name="title" placeholder="Your Hack's Name" required></input>
+            </div>
+            <br>
+            <div class="input-group">
+              <input type="text" class="form-control" name="description" placeholder="One Sentence Description of Your Hack" required></input>
+            </div>
+            <br>
+            <div class="input-group">
+              <input type="text" class="form-control" name="link" placeholder="Your Challenge Post Link" required></input>
+            </div></center>
+          </div>
+        </div>
+          <button type="button" class="btn btn-default col-md-offset-5" style="margin-top:30px;" data-dismiss="modal" onclick="submitHack()">Stack It!</button>
       </div>
-      <button onclick="submitHack()">Stack It!</button>
     </div>
   </body>
 </html>
