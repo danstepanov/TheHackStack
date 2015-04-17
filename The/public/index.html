@@ -6,6 +6,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <meta charset="utf-8">
+    <link href="style.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
@@ -30,20 +31,17 @@
     <!-- begin The Hack Stack -->
     <div class="list-group" style="height:100%; width: 80%; margin: 0 auto;">
       
-      <a class="list-group-item" style="height: 90px; padding-top" href="http://challengepost.com/software/3d-chocolate-printer-and-a-penguin">
+      <a class="list-group-item" style="height: 90px; padding-top" >
         <!-- TODO: Insert circular image here -->
-        <div style="display:block; float:left;   margin: 0 auto;
-  height: 100%;
-  margin-top: 1%;">
-          <button style="
-    margin:10px; margin-right:20px; height: 50%">
+        <div class="upvoteBox">
+          <button class="upvotePlus" id="plus" onclick="pullBitcamp2015()">
             <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
-            <p id="count">0</p>
+            <span id="count">2</span>
           </button>
         </div>
-        <div style="display:inline;">
-          <h4 class="list-group-item-heading; ">3D chocolate printer and a penguin</h4>
-          <p class="list-group-item-text">printing historical chocolatey goodness in 3D!!!!</p>
+        <div class="hack-info" style="display:inline;">
+          <h4 class="list-group-item-heading;" id="title"></h4>
+          <p class="list-group-item-text" id="description">printing historical chocolatey goodness in 3D!!!!</p>
         </div>
       </a>  
         
