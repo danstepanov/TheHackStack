@@ -87,7 +87,7 @@ function addResultsToListGroupByClass(results, className) {
         // Print the title of each hack pulled to the console
         console.log(object.get('Title'));
 
-        listItem = newStackListItem(object.get('Title'), object.get('Description'), object.get('Link'));
+        listItem = newStackListItem(object.get('Title'), shortenString(object.get('Description'), 100), object.get('Link'));
         $(className).append(listItem);
     }
 }
@@ -128,7 +128,9 @@ function newHackInfoTag(title, desc, linkURL) {
 }
 
 function newUpvoteBox(initialVotes) {
-    upvoteDiv = $("<div></div>").addClass("upvoteBox");
-    
-    
+    upvoteDiv = $("<div></div>").addClass("upvoteBox");   
+}
+
+function shortenString(description, newLength) {
+    return description.substring(0, newLength) + '...';
 }
