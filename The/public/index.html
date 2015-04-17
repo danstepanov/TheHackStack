@@ -1,10 +1,6 @@
 <html lang="en">
   <head>
-    <script src = "https://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" rel = "stylesheet">
-    <script src="main.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <meta charset="utf-8">
     <link href="style.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,23 +23,27 @@
       </div>
     </div> 
     <!-- end of navigation bar -->
+      
+    <div class="header text-center">
+        <h1>Welcome to Bitcamp 2015!</h1>
+    </div>
 
     <!-- begin The Hack Stack -->
-    <div class="list-group" style="height:100%; width: 80%; margin: 0 auto;">
+    <div class="list-group hackathonListGroup">
       
-      <a class="list-group-item" style="height: 90px; padding-top" >
+      <div class="list-group-item hackathonListGroupItem">
         <!-- TODO: Insert circular image here -->
         <div class="upvoteBox">
-          <button class="upvotePlus" id="plus" onclick="pullBitcamp2015()">
+          <button class="upvotePlus" id="plus" onclick="upvote()">
             <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
             <span id="count">2</span>
           </button>
         </div>
-        <div class="hack-info" style="display:inline;">
+        <a class="hack-info">
           <h4 class="list-group-item-heading;" id="title"></h4>
           <p class="list-group-item-text" id="description">printing historical chocolatey goodness in 3D!!!!</p>
-        </div>
-      </a>  
+        </a>
+      </div>  
         
       <a class="list-group-item" style="height: 90px; padding-top" href="http://challengepost.com/software/3d-chocolate-printer-and-a-penguin">
         <!-- TODO: Insert circular image here -->
@@ -107,5 +107,14 @@
           <button type="button" class="btn btn-default col-md-offset-5" style="margin-top:30px;" data-dismiss="modal" onclick="submitHack()">Stack It!</button>
       </div>
     </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src = "https://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        $(document).ready(function(){
+            pullBitcamp2015()
+        });
+    </script>
   </body>
 </html>

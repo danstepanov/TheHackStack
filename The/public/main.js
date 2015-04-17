@@ -50,23 +50,21 @@ function upvote() {
 
 function pullBitcamp2015() {
     console.log("pullBitcamp2015 executed");
+    // Initialize Parse
     Parse.initialize("9oSP3PB2jbHOtMg3p0PilW9tQ6ahbfUvlEc9DmYQ", "IhLrkVUv2hGqYadeTW2rk2tOPCPhIgHFDlJO5tnq");	
+    // Intialize the Posts class
 	var Posts = Parse.Object.extend("Posts");
+    // Initialize a query on instance of Posts
 	var query = new Parse.Query(Posts);
+    // Return all objects aka Hacks in Posts that are from Bitcamp 2015
     query.equalTo("Hackathon","Bitcamp 2015");
+    // Return the Title and Description of each Hack in the query by running a for loop
     query.find({
         success: function(results) {
+            // Print the amount of hacks pulled to the console
             console.log("Successfully retrieved " + results.length + " Bitcamp hacks.");
-            for (var i=0; i < results.length; i++) {
-                var object = results[i];
-                
-                console.log(object.get('Title'));
-                $("input[name='title']").val(object.get('Title'));
-                    
-                listItem = newStackListItem(object.get('Title'), object.get('Description'));
-                $('.list-group').append(listItem);
-                
-            }
+            // pass the list of hacks and 
+            addResultsToListGroupByClass(results, ".list-group");
         },
         error: function(error) {
             console.log("Error: " + error.code + " " + error.message);
@@ -76,28 +74,34 @@ function pullBitcamp2015() {
     console.log("getHacks completed");
 }
 
+/* addResultsToListGroupByClass
+ * @results - Results retrieved from Parse.
+ * @class - name of the HTML/CSS class of the element to append results to
+ */
+
+function addResultsToListGroupByClass(results, className) {
+    // Initialize for loop across all hacks in query 
+    for (var i=0; i < results.length; i++) {
+        // each hack in the loop is i
+        var object = results[i];
+        // Print the title of each hack pulled to the console
+        console.log(object.get('Title'));
+
+        listItem = newStackListItem(object.get('Title'), object.get('Description'), object.get('Link'));
+        $(className).append(listItem);
+    }
+}
+
 /* AddNewListItem
  * Title
  * TODO: Upvotes, Descriptions, Link
  */
 
-function newStackListItem(title, desc/*, votes*/) {
+function newStackListItem(title, desc, linkURL/* votes*/) {
     listGroupItem = $("<a></a>").addClass("list-group-item");
-    listGroupItem.append(newHackInfoTag(title, desc));
     
-//    if (!(title === null || title == "")) {
-//        console.log(title)
-//    }
-//
-//    if (!(desc == null || desc == "")) {
-//        anotherTag = newDescriptionDivTag(desc);
-//        listGroupItem.addChild(anotherTag);
-//        console.log(desc);
-//    }
-    
-    
-    // listGroupItem.addChild(some other element)
-    // ...
+    // TODO: add upvote box
+    listGroupItem.append(newHackInfoTag(title, desc, linkURL));
     
     return listGroupItem;
 }
@@ -110,8 +114,8 @@ function newStackListItem(title, desc/*, votes*/) {
 </div>
 */
 
-function newHackInfoTag(title, desc/*, linkURL*/) {
-    outerTag = $("<div></div>").addClass("hack-info");
+function newHackInfoTag(title, desc, linkURL) {
+    outerTag = $("<a></a>").addClass("hack-info").attr('href', linkURL);
     
     titleTag = $("<h4></h4>").addClass("list-group-item-heading").attr('id', 'title');
         titleTag.text(title);

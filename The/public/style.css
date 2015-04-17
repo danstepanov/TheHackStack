@@ -11,3 +11,17 @@
     margin-right:20px; 
     height: 50%
 }
+
+.hackathonListGroup{
+    height:100%; 
+    width: 80%; 
+    margin: 0 auto;
+}
+
+.hackathonListGroupItem {
+    height: 90px;
+}
+
+.hack-info {
+    display:inline;
+}
