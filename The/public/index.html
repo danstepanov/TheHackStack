@@ -25,14 +25,22 @@
     <!-- end of navigation bar -->
       
     <div class="header text-center">
-        <h1>Welcome to Bitcamp 2015!</h1>
+        <h1>Welcome to the Bitcamp Stack!</h1>
     </div>
 
     <!-- begin The Hack Stack -->
     <div class="list-group hackathonListGroup">
       
-      <div class="list-group-item hackathonListGroupItem">
+      <div class="list-group-item hackathonListGroupItem hide-item" >
         <!-- TODO: Insert circular image here -->
+        
+          
+        <span class="hidden hackID">1</span>
+          <!-- 1. style .hidden using CSS to "display: none" -->
+          <!-- 2. create a span tag in newListItem or equivalent and addChild -->
+          <!-- 3. use jQuery to acquire .hackID from `this` in upvote(), where `this` is the <button> below. -->
+        
+          
         <div class="upvoteBox">
           <button class="upvotePlus" id="plus">
             <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>

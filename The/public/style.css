@@ -25,3 +25,11 @@
 .hack-info {
     display:inline;
 }
+
+.hide-item {
+    display:none;
+}
+
+.hidden {
+    display:none;   
+}
