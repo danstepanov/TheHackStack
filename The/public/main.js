@@ -97,10 +97,10 @@ function addResultsToListGroupByClass(results, className) {
  * TODO: Upvotes, Descriptions, Link
  */
 
-function newStackListItem(title, desc, linkURL/* votes*/) {
-    listGroupItem = $("<a></a>").addClass("list-group-item");
+function newStackListItem(title, desc, linkURL/*votes*/) {
+    listGroupItem = $("<div></div>").addClass("list-group-item hackathonListGroupItem");
     
-    // TODO: add upvote box
+    listGroupItem.append(newUpvoteBox(0));
     listGroupItem.append(newHackInfoTag(title, desc, linkURL));
     
     return listGroupItem;
@@ -127,8 +127,26 @@ function newHackInfoTag(title, desc, linkURL) {
     
 }
 
+//    <div class="upvoteBox">
+//      <button class="upvotePlus" id="plus" onclick="upvote()">
+//        <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+//        <span id="count">2</span>
+//      </button>
+//    </div>
+
 function newUpvoteBox(initialVotes) {
-    upvoteDiv = $("<div></div>").addClass("upvoteBox");   
+    upvoteDiv = $("<div></div>").addClass("upvoteBox");
+    
+    upvoteButton = $("<button></button>").addClass("upvotePlus").attr('id', plus).attr('onclick', 'upvote()');
+    upvoteArrow = $("<span></span>").addClass("glyphicon glyphicon-chevron-up").attr('aria-hidden', 'true');
+    upvoteCount = $("<span></span>").attr('id', count).text(initialVotes);
+    
+    upvoteButton.append(upvoteArrow).append(upvoteCount);
+    upvoteDiv.append(upvoteButton);
+    
+    return upvoteDiv;
+    
+    
 }
 
 function shortenString(description, newLength) {
