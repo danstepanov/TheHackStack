@@ -35,17 +35,21 @@ function submitHack() {
 };
 
 function upvote() {
+    button = this;
     console.log("upvote executed");
     
+    // only works for one #count, not dynamic
+    /*
     var currentVotes = parseInt($("#count").text());
-    console.log(currentVotes);
-    
     currentVotes++;
-    console.log(currentVotes);
-    
     var stringVotes = currentVotes.toString();
     $("#count").text(stringVotes);
+    */
     
+    // increase the button's span#count 
+    countTag = $(button).find("#count")[0];
+    newCount = parseInt(countTag.innerHTML) + 1;
+    $(countTag).text(newCount.toString());
 };
 
 function pullBitcamp2015() {
@@ -140,9 +144,11 @@ function newHackInfoTag(title, desc, linkURL) {
 function newUpvoteBox(initialVotes) {
     upvoteDiv = $("<div></div>").addClass("upvoteBox");
     
-    upvoteButton = $("<button></button>").addClass("upvotePlus").attr('id', plus).attr('onclick', 'upvote()');
+    upvoteButton = $("<button></button>").addClass("upvotePlus").attr('id', 'plus');
+    upvoteButton.click(upvote);
+    
     upvoteArrow = $("<span></span>").addClass("glyphicon glyphicon-chevron-up").attr('aria-hidden', 'true');
-    upvoteCount = $("<span></span>").attr('id', count).text(initialVotes);
+    upvoteCount = $("<span></span>").attr('id', 'count').text(initialVotes);
     
     upvoteButton.append(upvoteArrow).append(upvoteCount);
     upvoteDiv.append(upvoteButton);
