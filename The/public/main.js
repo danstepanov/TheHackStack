@@ -87,7 +87,10 @@ function addResultsToListGroupByClass(results, className) {
         // Print the title of each hack pulled to the console
         console.log(object.get('Title'));
 
-        listItem = newStackListItem(object.get('Title'), shortenString(object.get('Description'), 100), object.get('Link'));
+        listItem = newStackListItem(object.get('Title'), 
+                                    shortenString(object.get('Description'), 100), 
+                                    object.get('Link'), 
+                                    object.get('Upvotes'));
         $(className).append(listItem);
     }
 }
@@ -97,10 +100,10 @@ function addResultsToListGroupByClass(results, className) {
  * TODO: Upvotes, Descriptions, Link
  */
 
-function newStackListItem(title, desc, linkURL/*votes*/) {
+function newStackListItem(title, desc, linkURL, votes) {
     listGroupItem = $("<div></div>").addClass("list-group-item hackathonListGroupItem");
     
-    listGroupItem.append(newUpvoteBox(0));
+    listGroupItem.append(newUpvoteBox(votes));
     listGroupItem.append(newHackInfoTag(title, desc, linkURL));
     
     return listGroupItem;
