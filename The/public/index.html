@@ -7,11 +7,29 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1402509930070750',
+        xfbml      : true,
+        version    : 'v2.3'
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
     <!-- begin navigation bar -->
     <div class="navbar navbar-default" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="index.html">The Hack Stack</a>
+
         </div>
         <!--<div class="collapse navbar-collapse">-->
           <ul class="nav navbar-nav navbar-right">
@@ -21,26 +39,32 @@
           </ul>
         <!--</div>-->
       </div>
-    </div> 
+    </div>
     <!-- end of navigation bar -->
-      
+
     <div class="header text-center">
         <h1>Welcome to the Bitcamp Stack!</h1>
+        <div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
     </div>
 
     <!-- begin The Hack Stack -->
     <div class="list-group hackathonListGroup">
-      
+
       <div class="list-group-item hackathonListGroupItem hide-item" >
         <!-- TODO: Insert circular image here -->
-        
-          
+
+
         <span class="hidden hackID">1</span>
           <!-- 1. style .hidden using CSS to "display: none" -->
           <!-- 2. create a span tag in newListItem or equivalent and addChild -->
           <!-- 3. use jQuery to acquire .hackID from `this` in upvote(), where `this` is the <button> below. -->
-        
-          
+
+
         <div class="upvoteBox">
           <button class="upvotePlus" id="plus">
             <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
@@ -51,9 +75,9 @@
           <h4 class="list-group-item-heading;" id="title"></h4>
           <p class="list-group-item-text" id="description">printing historical chocolatey goodness in 3D!!!!</p>
         </a>
-      </div>  
+      </div>
     </div>
-   
+
     <!-- end of The Hack Stack -->
 
     <!-- begin Stack A Hack Modal -->
@@ -91,5 +115,6 @@
             pullBitcamp2015();
         });
     </script>
+
   </body>
 </html>
